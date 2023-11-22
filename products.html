@@ -3,12 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kaku Product</title>
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="CSS/Share/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <header>
+        <div class="logo-line">
+          <div class="logo">
+            <img src="image/logo.png" alt="Kaku Logo" width="97" height="116">
+          </div>
+    
+          <div class="user-actions">
+              <a href="#"><i class="fas fa-search"></i></a>
+              <a href="#"><i class="fas fa-user"></i></a>
+              <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+        </div>
+    
+        <nav>
+          <ul>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">最新消息</a></li>
+            <li><a href="#">商品資訊</a></li>
+            <li><a href="#">聯絡我們</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <h1>商品資訊</h1>
+
     <div class="main">
-        <div class="products-grid js-products-grid">
+        <div class="products-grid js-product-grid">
         </div>
     </div>
+
+    <footer>
+        <div class="icon">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+        <p>&copy; 2023 Kaku Corporation<br>本網站為緯育TibaMe前端工程師專業技術養成班第88期學員專題作品，<br>本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊 [緯育TibaMe] ，後續會由專人協助處理。
+        </p>
+    </footer>
 </body>
+    <script src="product.js"></script>
 </html>

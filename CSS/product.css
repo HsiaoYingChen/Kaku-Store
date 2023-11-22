@@ -1,0 +1,32 @@
+
+h1{
+  margin: 70px;
+}
+
+.main{
+  max-width: 1200px;
+  margin: auto; 
+  
+}
+.products-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  
+}
+
+.product-image{
+  width:287px;
+  height:286px;   
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 20px 0; 
+}
+
+.product-name, 
+.product-price{
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
