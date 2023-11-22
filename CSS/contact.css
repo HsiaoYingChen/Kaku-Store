@@ -1,0 +1,228 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Serif TC', serif;
+}
+
+.logo-line{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  position: relative;/*問題 為什麼不能寫在Logo*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.user-actions {
+  position: absolute; 
+  bottom: 1px;
+  right:25px;
+}
+
+.user-actions i {
+  color: black;
+  padding: 5px;
+}
+
+nav{
+  width:100%;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+nav ul{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 0;  
+} 
+
+nav ul li{
+  padding: 10px;
+  box-sizing: border-box; 
+}
+nav ul li a{
+  color:black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.banner-box{ 
+  width: 100%;
+  margin: auto;
+}
+
+.banner-box .banner-image-container{
+ position: relative;
+ margin:30px 30px 70px;/*問題*/
+}
+.banner-box .banner-image-container img{
+  width: 100%; /*問題* 寬度不是預設為 width100%*/
+  height: 404px;
+  object-fit: cover; 
+  border-radius: 30px;
+}
+.banner-box span{
+  font-size: 64px;
+  background-color: rgba(255, 242, 239, 0.6);
+  border-radius: 10px;
+  padding: 20px 60px;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact-container-box {
+  width: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  letter-spacing: 2px;
+  line-height:1.5;
+  align-items: stretch;
+  
+}
+.contact-container-left,
+.contact-container-right {
+    flex: 1;
+    margin: 40px;
+ 
+}
+
+
+h3{
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 2.5;
+}
+
+h4{
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height:2;
+}
+
+.contact-info>li{
+  line-height: 2;
+}
+
+.contact-info > ul i{
+  padding: 5px;
+ 
+}
+.branch-info>li{
+  line-height: 2;
+}
+.contact-container-right{
+  padding: 20px 50px;
+  background: #D9D9D9;
+  border-radius: 10px;
+}
+
+.contact-info{
+  margin-bottom: 60px;
+}
+.contact-info >ul{
+  list-style-type: none;
+}
+
+.branch-info >ul{
+  list-style-type: none;
+}
+.image-container {
+  width: 100%; 
+  height: 250px;
+  object-fit: cover;
+  
+}
+
+.image-container img{
+  border-radius: 5px;
+  margin-top: 15px;
+  width: 100%;   
+}
+
+.form-group{
+  padding: 5px;
+
+} 
+
+/* textarea {
+  flex: 1; /* 填充剩餘的高度 
+  resize: none; /* 取消 textarea 的 resize 功能 
+} */
+input {
+  width: 100%;
+  padding: 10px; 
+  margin-top: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+}
+
+label {
+  display: block; /* 將標籤轉換為塊級元素，使其單獨佔據一行 */
+  margin-bottom: 5px; 
+}
+
+.input-group {
+  width: 100%;
+  padding: 10px; /* 調整輸入元素內部填充 */
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+select,
+textarea {
+  width: 100%; /* 設定下拉框和文本區域寬度為100% */
+  padding: 10px; /* 調整內部填充 */
+  margin-top: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
+
+.contact-container-right >.btn-submit{
+  display: block;
+  margin-top: 10px;/*問題 */
+  margin: auto;
+  padding: 6px 20px;
+}
+
+footer{
+  background-color: #F1DFDB;
+  height: 120px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: center; 
+  margin-top:50px;
+  
+}
+
+footer .icon{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 5px;
+}
+
+footer .icon i{
+  padding: 5px;
+  color: #Ffffff;
+}
+footer p{
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}

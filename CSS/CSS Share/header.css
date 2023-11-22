@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Serif TC', serif;
+}
+
+.logo-line{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  position: relative;/*問題 為什麼不能寫在Logo*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.user-actions {
+  position: absolute; 
+  bottom: 1px;
+  right:25px;
+}
+
+.user-actions i {
+  color: black;
+  padding: 5px;
+}
+
+nav{
+  width:100%;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+nav ul{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 0;  
+} 
+
+nav ul li{
+  padding: 10px;
+  box-sizing: border-box; 
+}
+nav ul li a{
+  color:black;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.banner-box{ 
+  width: 100%;
+  margin: auto;
+}
+
+.banner-box .banner-image-container{
+ position: relative;
+ margin:30px 30px 70px;/*問題*/
+}
+.banner-box .banner-image-container img{
+  width: 100%; /*問題* 寬度不是預設為 width100%*/
+  height: 404px;
+  object-fit: cover; 
+  border-radius: 30px;
+}
+.banner-box span{
+  font-size: 64px;
+  background-color: rgba(255, 242, 239, 0.6);
+  border-radius: 10px;
+  padding: 20px 60px;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+footer{
+  background-color: #F1DFDB;
+  height: 120px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: center; 
+  margin-top:50px;
+  
+}
+
+footer .icon{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 5px;
+}
+
+footer .icon i{
+  padding: 5px;
+  color: #Ffffff;
+}
+footer p{
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}

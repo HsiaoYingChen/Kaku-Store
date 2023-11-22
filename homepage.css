@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; 
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+  width: 97px;
+  height: 116px;
+}
+
+nav {
+  display: flex; 
+  align-items: center; 
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
+.user-actions {
+  margin-left: auto; 
+  display: flex; 
+  align-items: center; 
+}
+
+.user-actions a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
