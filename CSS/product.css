@@ -4,10 +4,10 @@ h1{
 }
 
 .main{
-  max-width: 1200px;
+  width: 1200px;
   margin: auto; 
-  
 }
+
 .products-grid {
   width: 100%;
   display: grid;
@@ -16,6 +16,10 @@ h1{
   
 }
 
+.product-detail-container{
+  display: flex;
+  flex-direction: column;
+}
 .product-image{
   width:287px;
   height:286px;   
@@ -29,4 +33,24 @@ h1{
   font-size: 20px;
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+.product-quantity-container select{
+  font-size: 16px;
+  padding: 5px;
+}
+.product-spacer {
+  flex: 1;
+}
+
+.btn-add-to-cart{
+  color: black;
+  background-color:#FAEAE6;
+  font-size: 16px;
+  border: none;
+  text-align: center;
+  padding: 8px 14px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin: auto;
 }
