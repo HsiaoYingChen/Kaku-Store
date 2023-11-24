@@ -1,52 +1,67 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
 
-header {
+.part1{
+  width: 1200px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row; 
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
+  justify-content: center;
+  margin: auto;
 }
 
-.logo img {
-  width: 97px;
-  height: 116px;
+.part1 > img{
+  height: 483px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.part1-image-container,
+.part1-info-container{
+  flex:1;
 }
 
-nav {
-  display: flex; 
-  align-items: center; 
+.part1-info-container{
+  display:flex;
+  flex-direction: column;
 }
 
-nav ul {
-  list-style: none;
+
+
+
+
+
+
+
+
+
+.part4{
+  width: 1200px;
+  margin: auto; 
+}
+
+.news-grid{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.news-box{
   display: flex;
+  flex-direction: column;
 }
 
-nav ul li {
-  margin-right: 20px;
+.news-image {
+  height:268px; 
+  width: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px 0; 
 }
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
 
+/* <div class="news-box">  
+      <div class="news-image-container">
+          <img class="news-image" src="${news[i].image}">
+      </div>
 
-
-.user-actions {
-  margin-left: auto; 
-  display: flex; 
-  align-items: center; 
-}
-
-.user-actions a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-}
+      <div class="news-detail-container">
+        <div class="news-title">
+          ${news[i].title}
+        </div>
+      </div>   */

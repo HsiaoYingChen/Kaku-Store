@@ -10,7 +10,7 @@ products.forEach((product)=>{
       </div>
 
       <div class="product-detail-container">
-        <div class="products-name">
+        <div class="product-name">
           ${product.name}
         </div>
 
