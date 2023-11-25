@@ -41,24 +41,45 @@ ul{
   list-style-type: none;
 }
 
-.logo-line{
+.header-part{
   display: flex;
   justify-content: center;
   align-items: center; 
-  position: relative;/*問題 為什麼不能寫在Logo*/
+  position: relative;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 
-.user-actions {
-  position: absolute; 
+.header-right-section{
+  position:absolute;
   bottom: 1px;
   right:70px;
 }
 
-.user-actions i {
-  color: black;
-  padding: 5px;
+.cart-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center; 
+
+}
+
+.cart-icon{
+  filter: grayscale(100%) brightness(0);
+  width: 60px;
+  height: 40px;
+  position: relative;
+}
+
+.cart-quantity{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left:50%;
+  transform: translate(-20%, -75%);
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(209, 92, 92);
+  
 }
 
 nav{
