@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="bookingDate">選擇入住日期：</label>
+<input type="date" id="bookingDate" name="bookingDate">
+
+<ul id="bookingList">
+  <li data-date="2023-11-24">預訂 2023-11-24 的項目</li>
+  <li data-date="2023-11-25">預訂 2023-11-25 的項目</li>
+  <li data-date="2023-11-26">預訂 2023-11-26 的項目</li>
+  <!-- 其他項目 -->
+</ul>
+
+</body>
+
+<script>
+  // 獲取日期元素和預訂清單
+const bookingDateInput = document.getElementById('bookingDate');
+const bookingList = document.getElementById('bookingList');
+
+// 添加事件監聽器，當日期選擇發生變化時執行篩選
+bookingDateInput.addEventListener('input', filterBookings);
+
+function filterBookings() {
+  // 獲取所選日期
+  const selectedDate = bookingDateInput.value;
+
+  // 獲取所有項目
+  const bookings = Array.from(bookingList.children);
+
+  // 隱藏所有項目
+  bookings.forEach(booking => {
+    booking.style.display = 'none';
+  });
+
+  // 顯示符合日期的項目
+  const filteredBookings = bookings.filter(booking => {
+    const bookingDate = booking.getAttribute('data-date');
+    return bookingDate === selectedDate;
+  });
+
+  // 顯示篩選後的項目
+  filteredBookings.forEach(booking => {
+    booking.style.display = 'block';
+  });
+}
+
+</script>
+</html>
