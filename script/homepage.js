@@ -18,5 +18,29 @@ for(let i=0; i<3; i++) {
   </div>       
         `;
 }
-
 document.querySelector('.js-news-grid').innerHTML = hpNewsHtml;
+
+
+let hpProductsHtml = '';
+
+for(let i=0; i<4; i++) {
+	hpProductsHtml += `
+  <div class="product-box">  
+    <div class="product-image-container">
+      <img class="product-image" src="${products[i].image}">
+    </div>
+
+    <div class="product-detail-container">
+      <div class="product-name">
+        ${products[i].name}
+      </div>
+
+      <div class="product-content">
+        ${products[i].content}
+      </div>
+    </div>
+  </div>
+        `;
+}
+
+document.querySelector('.js-product-grid').innerHTML = hpProductsHtml;
