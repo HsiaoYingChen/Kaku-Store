@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  background-color: white;
+  z-index: 2;
+}
+
 body {
   font-family: 'Noto Serif TC', serif;
   letter-spacing: 2px;
@@ -15,7 +24,8 @@ h1, h2, h3, h4 {
 }
 
 h1{
-  font-size: 64px;
+  font-size: 45px;
+  line-height: 55px;
   text-align: center;
 }
 
@@ -44,9 +54,9 @@ ul{
 
 .logo-container a {
   display: inline-block;
-  width: 97px; /* 根據你的 logo 寬度設定 */
-  height: 116px; /* 根據你的 logo 高度設定 */
-}
+  width: 70px; 
+  height: 90px; 
+} 
 
 .header-part{
   display: flex;
@@ -60,7 +70,7 @@ ul{
 .header-right-section{
   position:absolute;
   bottom: 1px;
-  right:70px;
+  right:60px;
 }
 
 
@@ -73,10 +83,10 @@ ul{
 
 .cart-icon{
   filter: grayscale(100%) brightness(0);
-  width: 60px;
-  height: 40px;
+  width: 65px;
+  height: 35px;
   position: relative;
-  font-size: 23px;
+  /* font-size: 23px; */
 }
 
 .cart-quantity{
@@ -85,11 +95,10 @@ ul{
   margin: auto;
   top: 50%;
   left:50%;
-  transform: translate(-20%, -75%);
+  transform: translate(-10%, -80%);
   font-size: 16px;
   font-weight: 700;
   color: rgb(209, 92, 92);
-  
 }
 
 nav{
@@ -123,6 +132,7 @@ nav ul li a:hover{
 .banner-box {
   width: calc(100% - 120px); 
   margin: auto; 
+  padding-top: 180px;
 } 
 
 .banner-box .banner-image-container{
@@ -140,7 +150,7 @@ nav ul li a:hover{
 .banner-box h1{
   background-color: rgba(255, 242, 239, 0.6);
   border-radius: 10px;
-  padding: 70px 70px;
+  padding: 50px 50px;
   position: absolute;
   top: 50%;
   left:50%;
@@ -149,7 +159,7 @@ nav ul li a:hover{
 
 footer{
   background-color: #F1DFDB;
-  height: 150px;
+  height: 120px;
   display: flex;
   flex-direction: column; 
   justify-content: flex-end; 
@@ -167,6 +177,8 @@ footer .icon i{
   color: #Ffffff;
 }
 footer p{
+  font-size: 14px;
+  line-height: 20px;
   text-align: center;
   margin-bottom: 5px;
 }
