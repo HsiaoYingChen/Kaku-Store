@@ -56,7 +56,7 @@ cartSummaryHTML +=  `
       <div class="delivery-option">
         <input type="radio" checked
           class="delivery-option-input"
-          name="delivery-option-1">
+          name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">
             2023/12/30
@@ -69,7 +69,7 @@ cartSummaryHTML +=  `
       <div class="delivery-option">
         <input type="radio"
           class="delivery-option-input"
-          name="delivery-option-1">
+          name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">
             2023/12/28
@@ -82,7 +82,7 @@ cartSummaryHTML +=  `
       <div class="delivery-option">
         <input type="radio"
           class="delivery-option-input"
-          name="delivery-option-1">
+          name="delivery-option-${matchingProduct.id}">
         <div>
           <div class="delivery-option-date">
             2023/12/26
