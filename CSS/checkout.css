@@ -195,4 +195,13 @@
  .quantity-control span {
    margin: 0 5px;
  }
+
+ .delete-quantity-link{
+  margin-top: 10px;
+  padding: 20px;
+  cursor: pointer;
+ }
  
+ .delete-quantity-link:hover{
+  color:rgb(177, 39, 4);
+ }

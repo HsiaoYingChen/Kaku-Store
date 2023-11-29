@@ -1,4 +1,4 @@
-import{cart} from './cart.js';
+import {cart, removeFromCart} from './cart.js';
 import {products} from './shareData.js';
 
 let cartSummaryHTML = ''; 
@@ -35,17 +35,20 @@ cartSummaryHTML +=  `
 
       <div class="product-quantity">
         <div class="quantity-control">
-          <span class="delete-quantity-link link-primary">
-            <i class="fa-solid fa-minus delete-quantity-link link-primary"></i>
+          <span class="minus-quantity-link link-primary">
+            <i class="fa-solid fa-minus"></i>
           </span>
           <span>
             數量 <span class="quantity-label">${cartItem.quantity}</span>
           </span>
           <span class="update-quantity-link link-primary">
-            <i class="fa-solid fa-plus update-quantity-link link-primary"></i>
+            <i class="fa-solid fa-plus "></i>
           </span>
-
         </div>
+          <span class="delete-quantity-link link-primary
+            js-delete-link" data-product-id="${matchingProduct.id}">
+            移除
+          </span>
       </div>
     </div>
 
@@ -101,3 +104,10 @@ cartSummaryHTML +=  `
 document.querySelector('.js-order-summary')
   .innerHTML = cartSummaryHTML;
 
+document.querySelectorAll('.js-delete-link')
+  .forEach((link) => {
+    link.addEventListener('click', () => {
+      const productId = link.dataset.productId;
+      removeFromCart(productId);
+    });
+  });
