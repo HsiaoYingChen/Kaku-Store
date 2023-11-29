@@ -16,7 +16,8 @@ products.forEach((product) => {
 
   
 cartSummaryHTML +=  `
-  <div class="cart-item-container">
+  <div class="cart-item-container 
+  js-cart-item-container-${matchingProduct.id}">
     <div class="delivery-date">
       出貨日期: 2023/12/25
     </div>
@@ -42,7 +43,7 @@ cartSummaryHTML +=  `
             數量 <span class="quantity-label">${cartItem.quantity}</span>
           </span>
           <span class="update-quantity-link link-primary">
-            <i class="fa-solid fa-plus "></i>
+            <i class="fa-solid fa-plus"></i>
           </span>
         </div>
           <span class="delete-quantity-link link-primary
@@ -109,5 +110,8 @@ document.querySelectorAll('.js-delete-link')
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
+
+      const container = document.querySelector(`.js-cart-item-container-${productId}`)
     });
+    console.log(container);
   });
