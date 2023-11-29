@@ -16,7 +16,7 @@ products.forEach((product)=>{
         </div>
 
         <div class="product-price">
-          ${product.price}
+          $${product.price}
         </div>
 
         <div class="product-quantity-container">
@@ -68,7 +68,6 @@ function updateCartQuantity(){
   document.querySelector('.js-cart-quantity')
     .innerHTML = cartQuantity;
 }
-
 
 document.querySelectorAll('.js-add-to-cart')
 		.forEach((button) => {
