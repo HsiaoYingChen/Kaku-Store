@@ -5,13 +5,13 @@
 .news-box{
   display:flex;
   margin: auto;
-  width: 1200px;
+  width: 900px;
   position: relative; 
 }
 
 .news-box:not(:first-child)::after {
   content: "";
-  width: 1200px; 
+  width: 900px; 
   border-top: 1px solid #726E6E; 
   position: absolute;
 }
@@ -21,11 +21,11 @@
 }
 
 .news-image {
-  width:300px;
+  width:250px;
   height:177px;   
   object-fit: cover;
   border-radius: 5px;
-  margin: 40px 0; 
+  margin: 40px;
 }
 
 .news-detail-container{
@@ -38,11 +38,13 @@
   font-size: 16px;
   margin-bottom: 1px;
   line-height: 32px;
+  margin-left:60px;
 }
 
 .news-title {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom:5px;
   font-weight: bold;
   line-height: 32px; 
+  margin-left:60px;
 }

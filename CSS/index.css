@@ -16,16 +16,18 @@
 .part2-box,
 .part3-box,
 .part4-box{
-  margin-top: 30px;
-  margin-bottom:30px;
+  margin-top: 40px;
+  margin-bottom:50px;
 } 
 
 span{
   font-size: 34px;
+  font-weight:bold;
   text-align: center;
   letter-spacing: 2px;
   line-height: 32px;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 .part1-box{
@@ -92,7 +94,8 @@ span{
 
 .part3-box{
   width: 900px;
-  margin: 30px auto;
+  margin: 70px auto 50px;
+
 }
 
 .part3-image-container img{

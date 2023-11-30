@@ -172,10 +172,16 @@
  width: 100%;
  padding-top: 12px;
  padding-bottom: 12px;
- border-radius: 8px;
-
+ border-radius: 5px;
  margin-top: 11px;
  margin-bottom: 15px;
+ background-color:#FAEAE6;
+ letter-spacing: 2px;
+ border: none;
+}
+
+.place-order-button:hover{
+  background-color:rgba(255, 136, 106, 0.6);
 }
 
 .product-quantity {
@@ -204,4 +210,8 @@
  
  .delete-quantity-link:hover{
   color:rgb(177, 39, 4);
+ }
+
+ .icon-lock{
+  font-size: 24px
  }
