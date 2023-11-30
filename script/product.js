@@ -20,19 +20,19 @@ products.forEach((product)=>{
         </div>
 
         <div class="product-quantity-container">
-						<select class="js-quantity-selector-${product.id}">
-								<option selected value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-						</select>
-					</div>
+										<select class="js-quantity-selector-${product.id}">
+												<option selected value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+										</select>
+							</div>
 
        <div class="product-spacer"></div>
 
@@ -81,7 +81,8 @@ document.querySelectorAll('.js-add-to-cart')
             `.js-added-to-cart-${productId}`);
 
           addedMessage.classList.add('added-to-cart-visible');
-
+										
+										// 之後補上計時器控制
           setTimeout(() => {
             addedMessage.classList.remove('added-to-cart-visible');
           }, 2000);

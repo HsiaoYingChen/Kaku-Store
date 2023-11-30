@@ -5,13 +5,13 @@
 .news-box{
   display:flex;
   margin: auto;
-  width: 900px;
+  width: 1200px;
   position: relative; 
 }
 
 .news-box:not(:first-child)::after {
   content: "";
-  width: 900px; 
+  width: 1200px; 
   border-top: 1px solid #726E6E; 
   position: absolute;
 }
@@ -26,6 +26,7 @@
   object-fit: cover;
   border-radius: 5px;
   margin: 40px;
+  margin-left: 100px;
 }
 
 .news-detail-container{

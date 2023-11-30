@@ -105,6 +105,7 @@ cartSummaryHTML +=  `
 document.querySelector('.js-order-summary')
   .innerHTML = cartSummaryHTML;
 
+// 有問題console.log讀不到id  
 document.querySelectorAll('.js-delete-link')
   .forEach((link) => {
     link.addEventListener('click', () => {

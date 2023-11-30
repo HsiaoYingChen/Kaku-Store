@@ -71,7 +71,7 @@ label {
 
 .input-group {
   width: 100%;
-  padding: 10px; /* 調整輸入元素內部填充 */
+  padding: 10px; 
   border: 1px solid #ccc; 
   border-radius: 5px; 
 }

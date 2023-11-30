@@ -1,9 +1,9 @@
 export let cart = [{
   productId:'11',
-  quantity:2,
+  quantity:0,
 },{
   productId:'12',
-  quantity:3,
+  quantity:0,
 }];
 
 export function addToCart(productId) {
@@ -20,14 +20,13 @@ export function addToCart(productId) {
 
   const quantity = Number(quantitySelector.value);
 
+  // 代碼再檢查一次
   if (matchingItem){
-    matchingItem.quantity +=quantity;
+    matchingItem.quantity += quantity;
   } else{
       cart.push({
-    productId: productId,
-    //	productId(進階),
-    quantity:quantity
-      //quantity
+      productId: productId,
+      quantity:quantity
     });
   }				
 }

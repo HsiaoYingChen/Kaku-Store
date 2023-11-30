@@ -3,6 +3,7 @@ import{products}from "./shareData.js";
 
 let hpNewsHtml = '';
 
+// 之後補上過濾篩選
 for(let i=0; i<3; i++) {
 	hpNewsHtml += `
   <div class="news-box">  
@@ -21,6 +22,7 @@ for(let i=0; i<3; i++) {
 document.querySelector('.js-news-grid').innerHTML = hpNewsHtml;
 
 
+// 之後補上過濾篩選
 let hpProductsHtml = '';
 
 for(let i=0; i<4; i++) {
