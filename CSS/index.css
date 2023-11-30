@@ -31,10 +31,10 @@ span{
 }
 
 .part1-box{
-  width: 900px;
+  width: 1200px;
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 10px auto;
 }
 
 .part1-image-container,
@@ -55,8 +55,8 @@ span{
   padding: 20px;
 }
 .part1-image-container img{
-  width: 420px;
-  height: 340px;
+  width: 550px;
+  
   object-fit: cover;
   border-radius: 5px;
 }
@@ -108,8 +108,8 @@ span{
 
 
 .part4-box{
-  width: 900px;
-  margin: 30px auto; 
+  width: 1200px;
+  margin: auto;
 }
 
 .news-grid{
@@ -126,8 +126,9 @@ span{
 
 .news-image {
   height:268px; 
-  width: 300px;
+  width: 320px;
   object-fit: cover;
   border-radius: 5px;
   margin: 10px 0; 
+  margin: auto;
 }
