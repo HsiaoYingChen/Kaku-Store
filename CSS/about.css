@@ -76,8 +76,9 @@
     font-size: 20px;
 }
 
-.branch, 
-.founder {
+
+.founder,
+.branch {
     width: fit-content;
     padding:20px 20px;
     height: 16px;
@@ -89,8 +90,17 @@
     display: flex;
     align-items: center;
     margin: auto;
-    margin-bottom: 10px;
-    margin-top: 5px;
+   
+}
+
+.founder{
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.branch{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 img{
@@ -107,6 +117,7 @@ img{
 .part2-floor-title > i{
   padding-top:20px;
 }
+
 .floor-title{ 
   width: fit-content;
   padding: 20px 20px;
@@ -120,6 +131,7 @@ img{
   align-items: center;
   margin: auto;
   margin-bottom: 10px;
+  margin-top: -45px;
 }
 
 .description1{
