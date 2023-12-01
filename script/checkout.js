@@ -36,20 +36,16 @@ cartSummaryHTML +=  `
 
       <div class="product-quantity">
         <div class="quantity-control">
-          <span class="minus-quantity-link link-primary">
-            <i class="fa-solid fa-minus"></i>
-          </span>
+          <button class="minus-quantity-link link-primary">-</button>
           <span>
-            數量 <span class="quantity-label">${cartItem.quantity}</span>
-          </span>
-          <span class="update-quantity-link link-primary">
-            <i class="fa-solid fa-plus"></i>
-          </span>
+            <span class="quantity-label">${cartItem.quantity}</span>
+            </span>
+          <button class="update-quantity-link link-primary">+</button>
         </div>
-          <span class="delete-quantity-link link-primary
+          <button class="delete-quantity-link link-primary
             js-delete-link" data-product-id="${matchingProduct.id}">
-            移除
-          </span>
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
       </div>
     </div>
 

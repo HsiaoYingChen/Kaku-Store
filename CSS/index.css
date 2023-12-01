@@ -1,3 +1,6 @@
+.banner-box h1{
+  padding: 50px 50px;
+}
 .main{
   display: flex;
   justify-content: center;
@@ -132,3 +135,6 @@ span{
   margin: 10px 0; 
   margin: auto;
 }
+
+
+

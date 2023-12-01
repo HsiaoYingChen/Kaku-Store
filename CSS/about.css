@@ -18,7 +18,7 @@
   justify-content: flex-start;
   align-items:flex-start ;
   width: 300px;
-  padding-top: 90px;
+  padding-top: 70px;
 }
 
 .img-leftU{
@@ -31,31 +31,34 @@
 .img-right-item{
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 300px;
-  margin-left: 30px;
+  margin-left:15px;
 }
 
 .img-leftU img{
   width: 100%;
+  height:280px;
   border-radius: 5px 0 0 0;
 }
 
 .img-leftD img{
   width: 100%;
+  height: 300px;
   border-radius: 0 0 0 5px;
   padding-top:20px;
 }
 
 .img-rightU img{
   width: 100%;
+  height: 280px;
   border-radius: 0 5px 0 0;
 }
 
 .img-rightD img{
   width: 100%;
+  height: 295px;
   border-radius: 0 0 5px 0;
   padding-top:20px;
+  object-fit: contain;
 }
 
 .about-info-box{

@@ -189,3 +189,18 @@ h1 {
  .icon-lock{
   font-size: 24px
  }
+
+ .minus-quantity-link,
+ .update-quantity-link,
+ .delete-quantity-link{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding:10px;
+  
+  font-size: 23px;
+ }
+
+ .delete-quantity-link {
+  padding-left: 20px;
+ }

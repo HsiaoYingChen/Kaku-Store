@@ -86,7 +86,6 @@ ul{
   width: 65px;
   height: 35px;
   position: relative;
-  /* font-size: 23px; */
 }
 
 .cart-quantity{
@@ -94,8 +93,8 @@ ul{
   text-align: center;
   margin: auto;
   top: 50%;
-  left:50%;
-  transform: translate(-10%, -80%);
+  left: 53%;
+  transform: translate(-20%, -80%);
   font-size: 16px;
   font-weight: 700;
   color: rgb(209, 92, 92);
@@ -150,7 +149,7 @@ nav ul li a:hover{
 .banner-box h1{
   background-color: rgba(255, 242, 239, 0.6);
   border-radius: 5px;
-  padding: 50px 50px;
+  padding: 25px 50px;
   position: absolute;
   top: 50%;
   left:50%;
