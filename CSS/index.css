@@ -12,6 +12,7 @@
 .part4-title-container{
   display: flex;
   margin: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
 } 
 
@@ -83,6 +84,9 @@ span{
   padding: 30px;
 }
 
+.product-name{
+  font-weight: bold;
+}
 .product-image {
   height:200px; 
   width: 220px;
@@ -125,6 +129,8 @@ span{
 .news-box{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: auto;
 }
 
 .news-image {
