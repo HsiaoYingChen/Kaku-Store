@@ -16,11 +16,43 @@ h1{
  gap: 50px; 
 }
 
+.main {
+  margin-top: 60px;
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .product-detail-container{
  display: flex;
  flex-direction: column;
+ height: 180px;
+ margin-bottom: 20px;
+ /* justify-content: center;
+ align-items: center; */
 }
-
 
 .product-image{
  width:100%;

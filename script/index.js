@@ -1,5 +1,7 @@
 import{news}from "./shareData.js";
 import{products}from "./shareData.js";
+import{initializeLogin}from"./lightbox.js"
+initializeLogin('js-login', 'header-right-section');
 
 let hpNewsHtml = '';
 

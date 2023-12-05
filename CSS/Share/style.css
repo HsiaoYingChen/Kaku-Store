@@ -107,6 +107,8 @@ ul{
   font-weight: 700;
   color: rgb(209, 92, 92);
   border-radius: 50%;
+  width: 30px;
+  text-align: center;
 }
 
 nav{
