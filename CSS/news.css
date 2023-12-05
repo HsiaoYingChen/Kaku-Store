@@ -9,6 +9,7 @@
  position: relative; 
 }
 
+
 .news-box:not(:first-child)::after {
  content: "";
  width: 1200px; 
@@ -20,6 +21,13 @@
  width: 30%;
 }
 
+@media screen and (max-width: 1200px){
+ .news-image-container {
+     width: 100%;
+     height: 100px;
+     vertical-align: bottom;
+ }
+}
 .news-image {
  width:250px;
  height:177px;   

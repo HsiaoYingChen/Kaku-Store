@@ -36,7 +36,6 @@ span{
 
 .part1-box{
   width: 1200px;
-  background-color: #F1DFDB;;
   display: flex;
   justify-content: center;
   margin: 10px auto;
@@ -141,6 +140,5 @@ span{
   margin: 10px 0; 
   margin: auto;
 }
-
 
 

@@ -1,14 +1,8 @@
-const loginBtn = document.getElementById('login');
-const signupBtn = document.getElementById('signup');
+function initializeLogin() {
+  let lightBoxButton = document.getElementById('indexLogin');
 
-export function initializeLogin() {
-  let lightBoxButton = document.getElementById('js-login');
-
-  // 確保按鈕存在
   if (lightBoxButton) {
-    // 監聽點擊事件
     lightBoxButton.addEventListener('click', function () {
-      // 動態生成燈箱的 HTML 結構
       let lightboxHtml = `
         <div class="form-structor">
           <div class="signup">
@@ -20,7 +14,7 @@ export function initializeLogin() {
               <input type="password" class="input" placeholder="請輸入密碼"/>
             </div>
             <button class="submit-btn">登錄</button>
-            <a class="forget-password" ahref="">忘記密碼</a>
+            <a class="forget-password" href="">忘記密碼</a>
           </div>
           <div class="login slide-up">
             <div class="center">
@@ -36,31 +30,12 @@ export function initializeLogin() {
           </div>
         </div>
       `;
-      console.clear();
-
-      loginBtn.addEventListener('click', (e) => {
-        let parent = e.target.parentNode.parentNode;
-        Array.from(e.target.parentNode.parentNode.classList).find((element) => {
-          if (element !== "slide-up") {
-            parent.classList.add('slide-up')
-          } else {
-            signupBtn.parentNode.classList.add('slide-up')
-            parent.classList.remove('slide-up')
-          }
-        });
-      });
-
-      signupBtn.addEventListener('click', (e) => {
-        let parent = e.target.parentNode;
-        Array.from(e.target.parentNode.classList).find((element) => {
-          if (element !== "slide-up") {
-            parent.classList.add('slide-up')
-          } else {
-            loginBtn.parentNode.parentNode.classList.add('slide-up')
-            parent.classList.remove('slide-up')
-          }
-        });
-      });
+      document.body.insertAdjacentHTML('beforeend', lightboxHtml);
+      console.log(lightboxHtml);
+      //沒有出現
     });
   }
 }
+
+// 呼叫初始化函數
+initializeLogin();
