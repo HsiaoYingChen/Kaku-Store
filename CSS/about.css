@@ -1,16 +1,25 @@
 .about-img-box{
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   margin: auto;
   padding-top: 50px;
   padding-bottom: 150px;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .about-img-box{
+    flex-direction: column;
+  }
+ }
 .img-container{
   display: flex;
   justify-content:center;
 }
-
+@media (max-width: 768px) {
+  .img-container{
+    display: none;
+  }
+ }
 .img-left-item{
   display: flex;
   flex-direction: column;
@@ -63,10 +72,28 @@
 .about-info-box{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   margin: 10px 20px;
   padding-top: 12px;
 }
+
+@media (max-width: 768px) {
+  .about-info-box{
+    width: 100%;
+    margin:auto;
+  }
+ }
+
+ @media (max-width: 768px) {
+  .floor1-info,
+  .floor2-info,
+  .floor3-info{
+    width: 40%;
+    margin:auto;
+  }
+ }
+
+
 
 .founder-container,
 .branch-container{
@@ -106,7 +133,7 @@ img{
 }
 
 .floor-box{
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -161,8 +188,16 @@ font-size: 16px;
 }
 
 .description2{
-font-size: 16px;
+font-size:16px;
 }
+
+@media (max-width: 768px) {
+  .floor1-info,
+  .floor2-info,
+  .floor3-info {
+    width: 50%;
+  }
+ }
 
 .part2 {
   display: flex;
@@ -176,43 +211,47 @@ font-size: 16px;
   font-weight: bold;
 } 
 
-.floor1-container,
-.floor2-container,
-.floor3-container {
+.floor-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10%;
+  margin-bottom: 30px;
+}
+.floor-container:nth-child(2n+1) {
+  flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+  .floor-container {
+    flex-direction: column;
+    /* width: 50%; */
+    padding: 5%;
+  }
+ }
+
+.floor-img{
+  width: 40%;
 }
 
-.floor1-img{
-  margin-top: 50px;
-  margin-left:100px;
-}
-
-.floor1-img img{
- height:396px;
+.floor-img img{
  object-fit:cover;
  border-radius: 5px;
+ width: 100%;
 }
+.floor-info {
+  flex: 1;
+  min-width: 0;
+  margin: 0 5%;
+}
+ 
 
-.floor2-img{
-  margin-top: 100px;
-  margin-right:100px;
-}
+@media (max-width: 768px) {
+  .floor-img{
+    width: 100%;
+    padding: 0, 20px;
+  }
+ }
 
-.floor2-img img{
-  height:396px;
-  object-fit: cover;
-  border-radius: 5px;
-}
 
-.floor3-img{
-  margin-top: 100px;
-  margin-left:100px;
-}
-.floor3-img img{
-  height:396px;
-  object-fit: cover; 
-  border-radius: 5px;
-} 
+
 

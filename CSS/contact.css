@@ -1,5 +1,5 @@
 .contact-container-box {
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -7,7 +7,12 @@
   letter-spacing: 2px;
   line-height:1.5;
 }
-
+@media (max-width: 768px) {
+  .contact-container-box {
+    flex-direction: column;
+  }
+ }
+ 
 .contact-container-left,
 .contact-container-right {
     flex: 1;
