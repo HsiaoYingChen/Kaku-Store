@@ -1,17 +1,19 @@
-import {cart, removeFromCart} from './cart.js';
+import {cart, removeFromCart, saveToStorage} from './cart.js';
 import {products} from './shareData.js';
 
 let cartSummaryHTML = ''; 
 
 cart.forEach((cartItem) =>{
   const productId = cartItem.productId;
-  let matchingProduct;
+  const matchingProduct = products.
+  find((product) => product.id === productId);
+  // let matchingProduct;
 
-  products.forEach((product) => {
-    if (product.id === productId){
-      matchingProduct = product;
-    }
-  });
+  // products.forEach((product) => {
+  //   if (product.id === productId){
+  //     matchingProduct = product;
+  //   }
+  // });
   
   cartSummaryHTML +=  `
     <div class="cart-item-container 
@@ -115,44 +117,24 @@ document.querySelectorAll('.js-delete-link')
     });  
   });
  
+
 document.querySelectorAll('.js-plus-link')
   .forEach((link) => {
     link.addEventListener('click', (event) => {
-      const inputNum = event.currentTarget.parentNode.querySelector('.js-input-quantity');
+      const inputNum = event.currentTarget.parentNode
+      .querySelector('.js-input-quantity');
       inputNum.value = parseInt(inputNum.value) + 1;
+      saveToStorage();
     });
   });
 
 document.querySelectorAll('.js-minus-link')
   .forEach((link) => {
     link.addEventListener('click', (event) => {
-      const inputNum = event.currentTarget.parentNode.querySelector('.js-input-quantity');
-      if (inputNum.value <= 0) {
-        input_Num.value = 0;
-      } else {
-        inputNum.value = parseInt(inputNum.value) - 1;
-      }
+    const inputNum = event.currentTarget.parentNode
+    .querySelector('.js-input-quantity');
+    inputNum.value = Math.max(0, parseInt(inputNum.value) - 1);
+    saveToStorage();
     });
   });
 
-//   document.querySelectorAll('.js-plus-link')
-//   .forEach((link) => {
-//     link.addEventListener('click', (event) => {
-//       const productId = event.currentTarget.dataset.productId;
-//       const inputNum = document.querySelector(`.js-input-quantity[name="${productId}"]`);
-//       inputNum.value = parseInt(inputNum.value) + 1;
-//     });
-//   });
-
-// document.querySelectorAll('.js-minus-link')
-//   .forEach((link) => {
-//     link.addEventListener('click', (event) => {
-//       const productId = event.currentTarget.dataset.productId;
-//       const inputNum = document.querySelector(`.js-input-quantity[name="${productId}"]`);
-//       if (inputNum.value <= 0) {
-//         inputNum.value = 0;
-//       } else {
-//         inputNum.value = parseInt(inputNum.value) - 1;
-//       }
-//     });
-//   });
