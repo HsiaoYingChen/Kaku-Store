@@ -1,5 +1,10 @@
-import {cart, removeFromCart, saveToStorage} from './cart.js';
+import {cart, removeFromCart} from './cart.js';
 import {products} from './shareData.js';
+import {loadFooter } from './utils/app.js'
+document.addEventListener('DOMContentLoaded', function () {
+  loadFooter();
+});
+
 
 let cartSummaryHTML = ''; 
 
@@ -124,7 +129,6 @@ document.querySelectorAll('.js-plus-link')
       const inputNum = event.currentTarget.parentNode
       .querySelector('.js-input-quantity');
       inputNum.value = parseInt(inputNum.value) + 1;
-      saveToStorage();
     });
   });
 
@@ -134,7 +138,6 @@ document.querySelectorAll('.js-minus-link')
     const inputNum = event.currentTarget.parentNode
     .querySelector('.js-input-quantity');
     inputNum.value = Math.max(0, parseInt(inputNum.value) - 1);
-    saveToStorage();
     });
   });
 

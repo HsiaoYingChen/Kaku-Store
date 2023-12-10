@@ -1,4 +1,9 @@
 import{news} from "./shareData.js";
+import {loadHeader, loadFooter} from './utils/app.js'
+document.addEventListener('DOMContentLoaded', function () {
+ 		loadHeader();
+		loadFooter();
+});
 
 let newsHTML = '';
 

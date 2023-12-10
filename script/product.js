@@ -1,6 +1,7 @@
 import {products} from "./shareData.js";
 import {cart, addToCart} from "./cart.js"
 
+
 let productsHTML='';
 
 products.forEach((product)=>{
