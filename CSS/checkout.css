@@ -199,13 +199,13 @@
     padding: 5px;
     display: flex;
     align-items: center;
+    height: 50px;
   }
   
   .quantity-control span {
     margin: 0 5px;
   }
  
-
   .minus-quantity-link,
   .update-quantity-link,
   .delete-quantity-link{
@@ -229,6 +229,15 @@
   .icon-lock{
    font-size: 24px
   }
- 
- 
- 
+  
+  .input-quantity {
+  width: 30px;
+  height: 100%;
+  text-align: center;
+  border: none;
+  }
+  
+  .input-quantity:active{
+    height: 100%;
+  }
+  

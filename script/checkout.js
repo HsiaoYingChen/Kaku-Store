@@ -34,11 +34,14 @@ cart.forEach((cartItem) =>{
 
         <div class="product-quantity">
           <div class="quantity-control">
-            <button class="minus-quantity-link link-primary">-</button>
-            <span>
-              <span class="quantity-label">${cartItem.quantity}</span>
-              </span>
-            <button class="update-quantity-link link-primary">+</button>
+            <button class="minus-quantity-link link-primary 
+            js-minus-link" data-product-id="${matchingProduct.id}">-</button>
+            
+            <input type="text" class="input-quantity js-input-quantity" 
+            name="${matchingProduct.id}" value="${cartItem.quantity}">
+
+            <button class="update-quantity-link link-primary 
+            js-plus-link" data-product-id="${matchingProduct.id}">+</button>
           </div>
             <button class="delete-quantity-link link-primary
               js-delete-link" data-product-id="${matchingProduct.id}">
@@ -105,12 +108,51 @@ document.querySelectorAll('.js-delete-link')
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
-      // console.log(cart);
-      
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
       );
       container.remove();
-    });
-      
+    });  
   });
+ 
+document.querySelectorAll('.js-plus-link')
+  .forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const inputNum = event.currentTarget.parentNode.querySelector('.js-input-quantity');
+      inputNum.value = parseInt(inputNum.value) + 1;
+    });
+  });
+
+document.querySelectorAll('.js-minus-link')
+  .forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const inputNum = event.currentTarget.parentNode.querySelector('.js-input-quantity');
+      if (inputNum.value <= 0) {
+        input_Num.value = 0;
+      } else {
+        inputNum.value = parseInt(inputNum.value) - 1;
+      }
+    });
+  });
+
+//   document.querySelectorAll('.js-plus-link')
+//   .forEach((link) => {
+//     link.addEventListener('click', (event) => {
+//       const productId = event.currentTarget.dataset.productId;
+//       const inputNum = document.querySelector(`.js-input-quantity[name="${productId}"]`);
+//       inputNum.value = parseInt(inputNum.value) + 1;
+//     });
+//   });
+
+// document.querySelectorAll('.js-minus-link')
+//   .forEach((link) => {
+//     link.addEventListener('click', (event) => {
+//       const productId = event.currentTarget.dataset.productId;
+//       const inputNum = document.querySelector(`.js-input-quantity[name="${productId}"]`);
+//       if (inputNum.value <= 0) {
+//         inputNum.value = 0;
+//       } else {
+//         inputNum.value = parseInt(inputNum.value) - 1;
+//       }
+//     });
+//   });

@@ -1,11 +1,19 @@
-export let cart = [{
-  productId:'11',
-  quantity:2,
-},{
-  productId:'12',
-  quantity:1,
-}];
+export let cart = JSON.parse(localStorage.getItem('cart'));
 
+if (!cart){
+  cart = [{
+    productId:'11',
+    quantity:2,
+  },{
+    productId:'12',
+    quantity:1,
+  }];
+}
+
+
+function saveToStorage(){
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 export function addToCart(productId) {
 	let matchingItem;
 
@@ -22,13 +30,15 @@ export function addToCart(productId) {
 
   // 代碼再檢查一次
   if (matchingItem){
-    matchingItem.quantity += 1;
+    matchingItem.quantity += quantity;
   } else{
       cart.push({
       productId: productId,
-      quantity: 1
+      quantity: quantity
     });
-  }				
+  }			
+  
+  saveToStorage();
 }
 
 export function removeFromCart(productId) {
@@ -41,4 +51,5 @@ export function removeFromCart(productId) {
   });
 
   cart = newCart;
+  saveToStorage();
 }
