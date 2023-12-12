@@ -17,6 +17,17 @@ for(let i=0; i<3; i++) {
           ${news[i].title}
         </div>
       </div>  
+
+      <div class="news-content-container">
+        <div class="news-content">
+          ${news[i].content}
+        </div>
+      </div> 
+      <div class="news-readMore-container">
+      <a href="news.html">
+      <span class="news-readMore">Read More</span>
+      <i class="fa-solid fa-circle-arrow-right"></i></a>
+      </div> 
   </div>       
         `;
 }

@@ -1,6 +1,6 @@
 import {products} from "./shareData.js";
-import {cart, addToCart} from "./cart.js"
-
+import {cart, addToCart,
+	calculateCartQuantity} from "./cart.js"
 
 let productsHTML='';
 
@@ -60,14 +60,9 @@ document.querySelector('.js-product-grid').
 innerHTML = productsHTML;
 
 function updateCartQuantity(){
-  let cartQuantity = 0;
-
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  })
-
-  document.querySelector('.js-cart-quantity')
-    .innerHTML = cartQuantity;
+ 		const cartQuantity = calculateCartQuantity();
+   document.querySelector('.js-cart-quantity')
+     .innerHTML = cartQuantity;
 }
 
 updateCartQuantity();
@@ -77,18 +72,18 @@ document.querySelectorAll('.js-add-to-cart')
 				button.addEventListener('click', () => {
 					const productId = button.dataset.productId;
 					// const {productId} = button.dataset(進階寫法);
-          addToCart(productId);
-          updateCartQuantity();
-					
-          const addedMessage = document.querySelector(
-            `.js-added-to-cart-${productId}`);
+					addToCart(productId);
+					updateCartQuantity();
 
-          addedMessage.classList.add('added-to-cart-visible');
-										
-										// 之後補上計時器控制
-          setTimeout(() => {
-            addedMessage.classList.remove('added-to-cart-visible');
-          }, 2000);
+					const addedMessage = document.querySelector(
+							`.js-added-to-cart-${productId}`);
+
+					addedMessage.classList.add('added-to-cart-visible');
+					
+					// 之後補上計時器控制
+					setTimeout(() => {
+							addedMessage.classList.remove('added-to-cart-visible');
+					}, 2000);
 				})
 		})
 

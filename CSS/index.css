@@ -1,6 +1,7 @@
 .banner-box h1{
   padding: 50px 50px;
 }
+
 .main{
   display: flex;
   justify-content: center;
@@ -12,8 +13,8 @@
 .part4-title-container{
   display: flex;
   margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
 } 
 
 .part1-box,
@@ -35,7 +36,7 @@ span{
 }
 
 .part1-box{
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
   margin: 10px auto;
@@ -46,27 +47,49 @@ span{
   flex:1;
 }
 
+
+@media (max-width: 768px) {
+  .part1-box {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .part1-image-container {
+    width: 80%;
+    margin: auto;
+    padding:5%;
+  }
+  .part1-info-container {
+    width: 100%;
+    margin:auto;
+    /* padding: 5%; */
+  }
+ }
+
 .part1-info-container{
   display:flex;
   flex-direction: column;
+  width:50%
 }
 
 .part1-info-container h2{
-  padding:20px
+  padding-bottom: 20px;
 }
        
 .part1-image-container{
-  padding: 20px;
+  width: 100%;
+  /* padding:5%; */
 }
+
 .part1-image-container img{
-  width: 550px;
-  
+  width:100%; 
+  padding: 20px;
   object-fit: cover;
   border-radius: 5px;
+  height: 315px;
 }
 
 .part2-box{
-  width: 1200px;
+  max-width: 1200px;
   margin: auto; 
 }
 
@@ -76,6 +99,21 @@ span{
   grid-template-columns: repeat(4, 1fr); 
   gap:30px;
 }
+
+@media (max-width: 768px) {
+  .part2-box {
+    flex-direction: column;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 5%;
+  }
+
+  .product-image{
+    width: 100%;
+  }
+ }
 
 .product-box{
   display: flex;
@@ -87,9 +125,10 @@ span{
 .product-name{
   font-weight: bold;
 }
+
 .product-image {
   height:200px; 
-  width: 220px;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px;
   margin: 10px 0; 
@@ -100,10 +139,16 @@ span{
 }
 
 .part3-box{
-  width: 900px;
+  max-width: 900px;
   margin: 70px auto 50px;
 
 }
+@media (max-width: 768px) {
+  .part3-box {
+   width: 100%;
+   padding: 5%;
+  }
+ }  
 
 .part3-image-container img{
   width: 100%;
@@ -132,13 +177,46 @@ span{
   margin: auto;
 }
 
+@media (max-width: 768px) {
+  .part4-box {
+    max-width: 100%;
+  }
+  .news-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 10%;
+  }
+ }
+
 .news-image {
   height:268px; 
-  width: 320px;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px;
   margin: 10px 0; 
   margin: auto;
 }
 
+ .news-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; 
+}
+
+.news-readMore-container a{
+  text-decoration: none;
+  display: block;
+  text-align: right;
+} 
+
+.news-readMore{
+  font-size: 16px;
+  color: #3a7386;
+}
+
+.news-readMore-container i{
+  color:#3a7386;
+}
+  
 

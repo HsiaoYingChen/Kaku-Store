@@ -1,6 +1,7 @@
-import {cart, removeFromCart} from './cart.js';
+import {cart, removeFromCart, 
+  calculateCartQuantity} from './cart.js';
 import {products} from './shareData.js';
-import {loadFooter } from './utils/app.js'
+import {loadFooter} from './utils/app.js'
 document.addEventListener('DOMContentLoaded', function () {
   loadFooter();
 });
@@ -119,9 +120,17 @@ document.querySelectorAll('.js-delete-link')
         `.js-cart-item-container-${productId}`
       );
       container.remove();
+      updateCartQuantity();
     });  
   });
  
+function updateCartQuantity() {
+  const cartQuantity = calculateCartQuantity()
+  document.querySelector('.js-cart-quantity')
+  .innerHTML = `${cartQuantity}`;
+}
+  
+updateCartQuantity();
 
 document.querySelectorAll('.js-plus-link')
   .forEach((link) => {
