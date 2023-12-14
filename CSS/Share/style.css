@@ -24,9 +24,16 @@ h1, h2, h3, h4 {
 }
 
 h1{
-  font-size: 45px;
-  line-height: 55px;
+  font-size: 40px;
+  line-height: 50px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .h1 {
+    font-size: 20px;
+    line-height: 1.4em;
+  }
 }
 
 h2{
@@ -127,6 +134,7 @@ nav ul{
 nav ul li{
   font-size: 0;  
 }
+
 nav ul li a{
   display: block;
   color:black;
@@ -137,6 +145,86 @@ nav ul li a{
 
 nav ul li a:hover{
   background-color: rgba(255, 136, 106, 0.6);
+}
+
+.hambar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 50px;
+  line-height: 50px;
+  width: 42px;
+  height: 5px;
+  color: black;
+  cursor: pointer;
+  display: none;
+}
+
+.nav__btn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hambar.active {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 100vh;
+    background: white;
+    border: none;
+  }
+  nav ul {
+    padding-top: 50px;
+    flex-direction: column;
+  }
+  .nav__btn {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10vh;
+  }
+
+  nav.active{
+    display: block;
+  }
+
+  nav.active .nav__btn {
+    display: flex;
+  }
+
+  .close.active {
+    display: block;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 50px;
+  line-height: 50px;
+  width: 42px;
+  height: 5px;
+  color: black;
+  cursor: pointer;
+  display: none; 
+}
+
+.close:hover {
+  color: rgb(197, 128, 128); 
+}
+
+.fa-solid
+.fa-regular{
+  font-size: 40px;
+  height: 5px;
 }
 
 .banner-box {
@@ -157,6 +245,7 @@ nav ul li a:hover{
   object-fit: cover; 
   border-radius: 5px;
 }
+
 .banner-box h1{
   background-color: rgba(255, 242, 239, 0.6);
   border-radius: 5px;

@@ -13,8 +13,6 @@
 .part4-title-container{
   display: flex;
   margin: auto;
-  /* margin-top: 20px; */
-  /* margin-bottom: 20px; */
 } 
 
 .part1-box,
@@ -64,10 +62,11 @@ span{
   }
  }
 
+
 .part1-info-container{
   display:flex;
   flex-direction: column;
-  width:50%
+  width: calc(100% - 40px);
 }
 
 .part1-info-container h2{
@@ -76,7 +75,6 @@ span{
        
 .part1-image-container{
   width: 100%;
-  /* padding:5%; */
 }
 
 .part1-image-container img{
@@ -139,7 +137,6 @@ span{
 
 .part3-box{
   max-width: 900px;
-  /* margin: 70px auto 50px; */
   margin: 40px auto;
 
 }
@@ -159,7 +156,7 @@ span{
 
 
 .part4-box{
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
 }
 

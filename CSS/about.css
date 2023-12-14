@@ -78,7 +78,8 @@
 @media (max-width: 768px) {
   .about-info-box{
     width: 100%;
-    margin:auto;
+    /* margin:auto; */
+    margin-top: 20px, 0;
   }
  }
 
