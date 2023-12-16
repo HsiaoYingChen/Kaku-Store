@@ -1,31 +1,48 @@
 import {cart, removeFromCart, 
-  updateDeliveryOption} from './cart.js';
+ updateDeliveryOption} from './cart.js';
 import {products} from './shareData.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions} from './deliveryOptions.js';
 
-
+function renderOrderSummary(){
   let cartSummaryHTML = ''; 
 
   cart.forEach((cartItem) =>{
     const productId = cartItem.productId;
     const matchingProduct = products.
     find((product) => product.id === productId);
-  // let matchingProduct;
+   // let matchingProduct;
 
-  // products.forEach((product) => {
-  //   if (product.id === productId){
-  //     matchingProduct = product;
-  //   }
-  // });
+   // products.forEach((product) => {
+   //   if (product.id === productId){
+   //     matchingProduct = product;
+   //   }
+   // });
 
-    
+    const deliveryOptionId = cartItem.deliveryOptionId;
+
+    let deliveryOption;
+
+    deliveryOptions.forEach((option) => {
+      if (option.id === deliveryOptionId){
+        deliveryOption = option;
+      }
+    });
+
+    const today = dayjs();
+    const deliveryDate = today.add(
+      deliveryOptions.deliveryDays,
+      'days'
+    );
+    const dateString = deliveryDate.format(
+      'YYYY/MM/DD'
+    );
 
     cartSummaryHTML +=  `
       <div class="cart-item-container 
       js-cart-item-container-${matchingProduct.id}">
         <div class="delivery-date">
-          出貨日期: 
+          出貨日期: ${dateString}
         </div>
 
         <div class="cart-item-details-grid">
@@ -157,13 +174,14 @@ import {deliveryOptions} from './deliveryOptions.js';
       });
     });
 
-  // document.querySelectorAll('.js-delivery-option')
-  //   .forEach((element) => {
-  //     element.addEventListener('click', () => {
-  //       // const productId = element.dataset.productId;
-  //       // const deliveryOptionId = element.dataset.deliveryOptionId;
-  //       const {productId, deliveryOptionId} = element.dataset;
-  //       updateDeliveryOption(productId, deliveryOptionId)
-  //       renderOrderSummary();
-  //     });
-  //   });
+  document.querySelectorAll('.js-delivery-option')
+    .forEach((element) => {
+      element.addEventListener('click', () => {
+        // const productId = element.dataset.productId;
+        // const deliveryOptionId = element.dataset.deliveryOptionId;
+        const {productId, deliveryOptionId} = element.dataset;
+        updateDeliveryOption(productId, deliveryOptionId)
+        renderOrderSummary();
+      });
+    });
+}
