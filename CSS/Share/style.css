@@ -106,7 +106,7 @@ ul{
 
 .cart-quantity{
   position: absolute;
-  background-color: antiquewhite;
+  background-color:#FAEAE6;
   top: 40%;
   left: 60%;
   transform: translate(40%, -80%);
@@ -248,7 +248,7 @@ nav ul li a:hover{
 
 footer{
   background-color: #F1DFDB;
-  height: 135px;
+  height: 130px;
   display: flex;
   flex-direction: column; 
   justify-content: flex-end; 
@@ -264,6 +264,7 @@ footer .icon{
 footer .icon i{
   padding: 5px;
   color: black;
+  font-size: 16px;
 }
 footer p{
   font-size: 14px;
