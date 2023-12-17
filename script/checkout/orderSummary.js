@@ -46,10 +46,10 @@ export function renderOrderSummary(){
               <input type="text" class="input-quantity js-input-quantity" 
               data-product-id="${matchingProduct.id}" 
               value="${cartItem.quantity}">
-              
+
               <button class="update-quantity-link link-primary 
               js-plus-link" data-product-id="${matchingProduct.id}">+</button>
-            </div>
+              </div>
               <button class="delete-quantity-link link-primary
                 js-delete-link" data-product-id="${matchingProduct.id}">
                 <i class="fa-solid fa-trash-can"></i>
@@ -125,38 +125,44 @@ export function renderOrderSummary(){
     });  
   });
 
-
-
   document.querySelectorAll('.js-plus-link')
     .forEach((link) => {
-      link.addEventListener('click', (event) => {
-        const inputNum = event.currentTarget.parentNode
-        .querySelector('.js-input-quantity');
-        inputNum.value = parseInt(inputNum.value) + 1;
+      link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
+        const container = document.querySelector(
+          `.js-cart-item-container-${productId}`
+        );
         
-        const {productId} = link.dataset;
-        const newQuantity = parseInt(link.dataset.newQuantity);
-        updateQuantity(productId, newQuantity)
+        const quantityInput = document.querySelector(
+          `.js-input-quantity`
+        );
+
+        const newQuantity = Number(quantityInput.value) + 1;
+        updateQuantity(productId, newQuantity);
         
+        renderOrderSummary();
         renderPaymentSummary();
-      
       });
     });
 
   document.querySelectorAll('.js-minus-link')
     .forEach((link) => {
-      link.addEventListener('click', (event) => {
-      const inputNum = event.currentTarget.parentNode
-      .querySelector('.js-input-quantity');
-      inputNum.value = Math.max(0, parseInt(inputNum.value) - 1);
+      link.addEventListener('click', () => {
+      const productId = link.dataset.productId;
+      const container = document.querySelector(
+        `.js-cart-item-container-${productId}`
+      );
       
-      const {productId} = link.dataset;
-      const newQuantity = parseInt(link.dataset.newQuantity);
-      
-      updateQuantity(productId, newQuantity)
+      const quantityInput = document.querySelector(
+        `.js-input-quantity`
+      );
 
+      const newQuantity = Number(quantityInput.value) - 1;
+      updateQuantity(productId, newQuantity);
       
+      renderOrderSummary();
       renderPaymentSummary();
+
       });
     });
 
@@ -168,7 +174,6 @@ export function renderOrderSummary(){
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
     
-        
         renderPaymentSummary();
       });
     });
