@@ -1,4 +1,4 @@
-import{news, products}from "./shareData.js";
+import{news, products}from "../data/shareData.js";
 //import{initializeLogin}from"./lightbox.js";
 // initializeLogin('js-login', 'header-right-section');
 

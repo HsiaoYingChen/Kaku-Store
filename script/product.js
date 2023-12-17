@@ -1,6 +1,6 @@
-import {products} from "./shareData.js";
+import {products} from "../data/shareData.js";
 import {cart, addToCart,
-	calculateCartQuantity} from "./cart.js"
+	calculateCartQuantity} from "../data/cart.js"
 
 let productsHTML='';
 
