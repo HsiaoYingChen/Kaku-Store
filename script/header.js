@@ -45,18 +45,18 @@ export function renderHeader() {
     .innerHTML = HeaderHTML;
   
     const hambar = document.querySelector('.hambar');
-const close = document.querySelector('.close');
-const nav = document.querySelector('nav');
+    const close = document.querySelector('.close');
+    const nav = document.querySelector('nav');
 
-hambar.addEventListener('click', function () {
-  nav.classList.add('active');
-  close.classList.add('active');
-  hambar.classList.remove('active');
-});
+    hambar.addEventListener('click', function () {
+    nav.classList.add('active');
+    close.classList.add('active');
+    hambar.classList.remove('active');
+    });
 
-close.addEventListener('click', function () {
-  nav.classList.remove('active');
-  close.classList.remove('active');
-  hambar.classList.add('active');
+    close.addEventListener('click', function () {
+    nav.classList.remove('active');
+    close.classList.remove('active');
+    hambar.classList.add('active');
 });
 }
