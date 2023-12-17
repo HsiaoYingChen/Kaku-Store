@@ -1,5 +1,6 @@
 import {cart} from '../../data/cart.js';
 
+//cart沒辦法被載入
 export function renderHeader() {
   let cartQuantity = 0;
 
