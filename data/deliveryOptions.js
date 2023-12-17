@@ -1,3 +1,5 @@
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
 export const deliveryOptions = [{
   id: '1',
   deliveryDays: 7,
@@ -22,4 +24,30 @@ export function getDeliveryOption(deliveryOptionId){
   });
 
   return deliveryOption;
+}
+
+//假日不出貨
+function isWeekend(date) {
+  const dayOfWeek = date.format('dddd');
+  return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday';
+}
+
+export function calculateDeliveryDate(deliveryOption) {
+  let remainingDays = deliveryOption.deliveryDays;
+  let deliveryDate = dayjs();
+
+  while (remainingDays > 0) {
+    deliveryDate = deliveryDate.add(1, 'day');
+
+    if (!isWeekend(deliveryDate)) {
+      remainingDays--;
+      // 簡寫remainingDays = remainingDays - 1;
+    }
+  }
+
+  const dateString = deliveryDate.format(
+    'YYYY/MM/DD  (ddd)'
+  );
+
+  return dateString;
 }

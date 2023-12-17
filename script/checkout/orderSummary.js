@@ -1,8 +1,9 @@
 import {cart, removeFromCart, updateDeliveryOption} from '../../data/cart.js';
 import {products, getProduct} from '../../data/shareData.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
+import {deliveryOptions, getDeliveryOption, calculateDeliveryDate} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummary.js';
+
 
 export function renderOrderSummary(){
   let cartSummaryHTML = ''; 
@@ -16,14 +17,7 @@ export function renderOrderSummary(){
     
     const deliveryOption = getDeliveryOption(deliveryOptionId);
     
-    const today = dayjs();
-    const deliveryDate = today.add(
-      deliveryOption.deliveryDays,
-      'days'
-    );
-    const dateString = deliveryDate.format(
-      'YYYY/MM/DD dddd'
-    );
+    const dateString = calculateDeliveryDate(deliveryOption);
 
     cartSummaryHTML +=  `
       <div class="cart-item-container 
@@ -79,15 +73,7 @@ export function renderOrderSummary(){
     let html = '';
 
     deliveryOptions.forEach((deliveryOption) => {
-      const today = dayjs();
-      const deliveryDate = today.add(
-        deliveryOption.deliveryDays,
-        'days'
-      );
-      const dateString = deliveryDate.format(
-        'YYYY/MM/DD'
-      );
-
+      const dateString = calculateDeliveryDate(deliveryOption);
       const priceString = deliveryOption.price
       === 0 
         ? '免運'
@@ -128,11 +114,8 @@ export function renderOrderSummary(){
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
         removeFromCart(productId);
-        const container = document.querySelector(
-          `.js-cart-item-container-${productId}`
-        );
-        container.remove();
-        // updateCartQuantity();
+
+        renderOrderSummary();
         renderPaymentSummary();
       });  
     });
@@ -182,6 +165,7 @@ export function renderOrderSummary(){
         // const deliveryOptionId = element.dataset.deliveryOptionId;
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
+    
         renderOrderSummary();
         renderPaymentSummary();
       });

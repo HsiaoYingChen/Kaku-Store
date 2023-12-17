@@ -15,13 +15,20 @@ export function renderPaymentSummary(){
   });
 
   const total = productPrice + shippingPrice;
+
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
   const paymentSummaryHTML = `
     <div class="payment-summary-title">
       訂單摘要
     </div>
 
     <div class="payment-summary-row">
-      <div>數量 (3) :</div>
+      <div>數量(${cartQuantity}):</div>
       <div class="payment-summary-money">
       $${productPrice}</div>
     </div>
