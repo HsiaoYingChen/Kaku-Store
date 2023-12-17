@@ -35,7 +35,7 @@ products.forEach((product)=>{
 										</select>
 							</div>
 
-       <div class="product-spacer"></div>
+      <div class="product-spacer"></div>
 
 							<div class="added-to-cart js-added-to-cart-${product.id}">
 									<img src="image/icons/checkmark.png">
@@ -60,9 +60,9 @@ document.querySelector('.js-product-grid').
 innerHTML = productsHTML;
 
 function updateCartQuantity(){
- 		const cartQuantity = calculateCartQuantity();
-   	document.querySelector('.js-cart-quantity')
-    	.innerHTML = cartQuantity;
+  const cartQuantity = calculateCartQuantity();
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
 }
 
 updateCartQuantity();

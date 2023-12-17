@@ -31,7 +31,7 @@ export function addToCart(productId) {
 
   const quantity = Number(quantitySelector.value);
 
-  // 代碼再檢查一次
+  
   if (matchingItem) {
     matchingItem.quantity += quantity;
   } else {
@@ -78,6 +78,20 @@ export function updateDeliveryOption(productId, deliveryOptionId){
   });
 
   matchingItem.deliveryOptionId = deliveryOptionId;
+
+  saveToStorage();
+}
+
+export function updateQuantity(productId, newQuantity) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.quantity = newQuantity;
 
   saveToStorage();
 }

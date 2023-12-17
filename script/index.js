@@ -1,6 +1,6 @@
-import{news, products}from "../data/shareData.js";
-//import{initializeLogin}from"./lightbox.js";
-// initializeLogin('js-login', 'header-right-section');
+import {news, products} from "../data/shareData.js";
+import {renderHeader} from './header.js';
+renderHeader();
 
 let hpNewsHtml = '';
 

@@ -1,4 +1,4 @@
-import {cart, removeFromCart, updateDeliveryOption} from '../../data/cart.js';
+import {cart, removeFromCart, updateDeliveryOption, updateQuantity} from '../../data/cart.js';
 import {products, getProduct} from '../../data/shareData.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions, getDeliveryOption, calculateDeliveryDate} from '../../data/deliveryOptions.js';
@@ -44,8 +44,9 @@ export function renderOrderSummary(){
               js-minus-link" data-product-id="${matchingProduct.id}">-</button>
               
               <input type="text" class="input-quantity js-input-quantity" 
-              name="${matchingProduct.id}" value="${cartItem.quantity}">
-
+              data-product-id="${matchingProduct.id}" 
+              value="${cartItem.quantity}">
+              
               <button class="update-quantity-link link-primary 
               js-plus-link" data-product-id="${matchingProduct.id}">+</button>
             </div>
@@ -108,25 +109,23 @@ export function renderOrderSummary(){
   document.querySelector('.js-order-summary')
     .innerHTML = cartSummaryHTML;
 
-  // 有問題console.log讀不到id  
+  
+  //不要用DOM操作來更新，而是重新產生HTML符合MVC設計方式
   document.querySelectorAll('.js-delete-link')
-    .forEach((link) => {
-      link.addEventListener('click', () => {
-        const productId = link.dataset.productId;
-        removeFromCart(productId);
+  .forEach((link) => {
+    link.addEventListener('click', () => {
+      const productId = link.dataset.productId;
+      removeFromCart(productId);
+      // const container = document.querySelector(
+      //   `.js-cart-item-container-${productId}`
+      // );
+      // container.remove
+      renderOrderSummary();
+      renderPaymentSummary();
+    });  
+  });
 
-        renderOrderSummary();
-        renderPaymentSummary();
-      });  
-    });
 
-  // function updateCartQuantity() {
-  //   const cartQuantity = calculateCartQuantity()
-  //   document.querySelector('.js-cart-quantity')
-  //   .innerHTML = `${cartQuantity}`;
-   //}
-    
-  // updateCartQuantity();
 
   document.querySelectorAll('.js-plus-link')
     .forEach((link) => {
@@ -134,12 +133,13 @@ export function renderOrderSummary(){
         const inputNum = event.currentTarget.parentNode
         .querySelector('.js-input-quantity');
         inputNum.value = parseInt(inputNum.value) + 1;
-        // const cartItem = cart.find(item => item.productId === productId);
-        // if (cartItem) {
-        //   cartItem.quantity = parseInt(inputNum.value) + 1;
-        // }
+        
+        const {productId} = link.dataset;
+        const newQuantity = parseInt(link.dataset.newQuantity);
+        updateQuantity(productId, newQuantity)
+        
         renderPaymentSummary();
-        // console.log('Plus button clicked!');
+      
       });
     });
 
@@ -149,11 +149,13 @@ export function renderOrderSummary(){
       const inputNum = event.currentTarget.parentNode
       .querySelector('.js-input-quantity');
       inputNum.value = Math.max(0, parseInt(inputNum.value) - 1);
-      // const cartItem = cart.find(item => item.productId === productId);
-      // if (cartItem) {
-      //   cartItem.quantity = Math.max(0, parseInt(inputNum.value) - 1);
-      // }
-      // console.log('Minus button clicked!')
+      
+      const {productId} = link.dataset;
+      const newQuantity = parseInt(link.dataset.newQuantity);
+      
+      updateQuantity(productId, newQuantity)
+
+      
       renderPaymentSummary();
       });
     });
@@ -166,7 +168,7 @@ export function renderOrderSummary(){
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
     
-        renderOrderSummary();
+        
         renderPaymentSummary();
       });
     });

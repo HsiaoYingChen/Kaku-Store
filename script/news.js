@@ -1,10 +1,7 @@
-import{news} from "./shareData.js";
-import {loadHeader, loadFooter} from './utils/app.js'
-document.addEventListener('DOMContentLoaded', function () {
- 		loadHeader();
-		loadFooter();
-});
+import{news} from "../data/shareData.js";
+import {renderHeader} from './header.js';
 
+renderHeader();
 let newsHTML = '';
 
 news.forEach((news) => {
