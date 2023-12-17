@@ -4,11 +4,11 @@ if (!cart){
   cart = [{
     productId:'11',
     quantity:2,
-    deliveryOptionsId: '1'
-  },{
+    deliveryOptionId: '1'
+  }, {
     productId:'12',
     quantity:1,
-    deliveryOptionsId: '2'
+    deliveryOptionId: '2'
   }];
 }
 
@@ -32,14 +32,13 @@ export function addToCart(productId) {
   const quantity = Number(quantitySelector.value);
 
   // 代碼再檢查一次
-  if (matchingItem){
+  if (matchingItem) {
     matchingItem.quantity += quantity;
-  } else{
+  } else {
       cart.push({
       productId: productId,
       quantity: quantity,
       deliveryOptionId: '1'
-      
     });
   }			
   
@@ -70,13 +69,15 @@ export function calculateCartQuantity() {
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId){
-  let cartQuantity = 0;
+  let matchingItem;
 
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
+  cart.forEach((cartItem)=>{
+    if (productId === cartItem.productId){
+      matchingItem =cartItem;
+    }
   });
 
-  matchingItem.deliveryOptionId = deliveryOptionsId;
+  matchingItem.deliveryOptionId = deliveryOptionId;
 
   saveToStorage();
 }
