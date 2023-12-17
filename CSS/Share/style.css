@@ -149,15 +149,12 @@ nav ul li a:hover{
 
 .hambar {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 50px;
-  line-height: 50px;
-  width: 42px;
-  height: 5px;
+  top: 15px;
+  right: 15px;
   color: black;
   cursor: pointer;
   display: none;
+  font-size: 35px;
 }
 
 .nav__btn {
@@ -175,8 +172,8 @@ nav ul li a:hover{
     right: 0;
     top: 0;
     width: 150px;
-    height: 100vh;
-    background: white;
+    height: 35vh;
+    background: #F1DFDB;
     border: none;
   }
   nav ul {
@@ -201,31 +198,24 @@ nav ul li a:hover{
 
   .close.active {
     display: block;
+    
   }
 }
 
 .close {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 50px;
-  line-height: 50px;
-  width: 42px;
-  height: 5px;
+  top: 15px;
+  right: 15px;
   color: black;
   cursor: pointer;
   display: none; 
+  font-size: 35px;
 }
 
 .close:hover {
   color: rgb(197, 128, 128); 
 }
 
-.fa-solid
-.fa-regular{
-  font-size: 40px;
-  height: 5px;
-}
 
 .banner-box {
   width: calc(100% - 120px); 
@@ -234,9 +224,9 @@ nav ul li a:hover{
 } 
 
 .banner-box .banner-image-container{
- position: relative;
- margin-top: 30px;
- margin-bottom: 60px;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 
 .banner-box .banner-image-container img{
@@ -258,7 +248,7 @@ nav ul li a:hover{
 
 footer{
   background-color: #F1DFDB;
-  height: 120px;
+  height: 135px;
   display: flex;
   flex-direction: column; 
   justify-content: flex-end; 
@@ -273,7 +263,7 @@ footer .icon{
 
 footer .icon i{
   padding: 5px;
-  color: #Ffffff;
+  color: black;
 }
 footer p{
   font-size: 14px;

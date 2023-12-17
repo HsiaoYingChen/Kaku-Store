@@ -13,7 +13,7 @@
 
 </head>
 <body>
-  <header>
+  <!-- <header>
     <div class="header-part">
       <div class="logo-container">
         <a href="index.html">
@@ -25,7 +25,7 @@
 
         <a class="cart-link header-link" href="checkout.html"><i class="fa-solid fa-cart-shopping"></i>
         <div class="cart-quantity
-        js-cart-quantity">0</div></a>
+        js-cart-quantity">${cartQuantity}</div></a>
 
       </div>
     </div>
@@ -42,7 +42,9 @@
     </nav>
       <a class="hambar active" href="#"><i class="fa-solid fa-bars"></i></a>
       <div class="close"><i class="fa-regular fa-circle-xmark"></i></div>
-  </header>
+  </header> -->
+  <div class="header-box js-header-box">
+  </div>
 
   <section class="banner-box">
     <div class="banner-image-container">
@@ -105,29 +107,7 @@
 </footer>
 
 <script type="module" src="script/index.js"></script>
-<script src="script/lightbox.js"></script>
 <script>
-const hambar = document.querySelector('.hambar');
-const close = document.querySelector('.close');
-const nav = document.querySelector('nav');
-
-hambar.addEventListener('click', function () {
-  nav.classList.add('active');
-  // close.style.display = 'block';
-  // hambar.style.display = 'none';
-  close.classList.add('active')
-  hambar.classList.remove('active')
-});
-
-close.addEventListener('click', function () {
-  nav.classList.remove('active');
-  close.classList.remove('active')
-  hambar.classList.add('active')
-  // close.style.display = 'none';
-  // hambar.style.display = 'block';
-});
-
-
 
 </script>
 

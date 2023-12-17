@@ -1,6 +1,7 @@
 import {products} from "../data/shareData.js";
-import {cart, addToCart,
-	calculateCartQuantity} from "../data/cart.js"
+import {cart, addToCart, calculateCartQuantity} from "../data/cart.js";
+import {renderHeader} from './header.js';
+renderHeader();
 
 let productsHTML='';
 
