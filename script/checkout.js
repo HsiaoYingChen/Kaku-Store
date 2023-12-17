@@ -3,7 +3,7 @@ import {products} from './shareData.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions} from './deliveryOptions.js';
 
-
+function renderOrderSummary(){
   let cartSummaryHTML = ''; 
 
   cart.forEach((cartItem) =>{
@@ -183,3 +183,6 @@ import {deliveryOptions} from './deliveryOptions.js';
         renderOrderSummary();
       });
     });
+}
+
+renderOrderSummary();
