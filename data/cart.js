@@ -90,7 +90,7 @@ export function updateQuantity(productId, newQuantity) {
       matchingItem = cartItem;
     }
   });
-s
+
   matchingItem.quantity = newQuantity;
 
   saveToStorage();
