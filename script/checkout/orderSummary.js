@@ -157,7 +157,8 @@ export function renderOrderSummary(){
         `.js-input-quantity`
       );
 
-      const newQuantity = Number(quantityInput.value) - 1;
+      // const newQuantity = Number(quantityInput.value) - 1;
+      const newQuantity = Math.max(Number(quantityInput.value) - 1, 0)
       updateQuantity(productId, newQuantity);
       
       renderOrderSummary();
