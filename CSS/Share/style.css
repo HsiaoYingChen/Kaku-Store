@@ -248,7 +248,7 @@ nav ul li a:hover{
 
 footer{
   background-color: #F1DFDB;
-  height: 130px;
+  height: 140px;
   display: flex;
   flex-direction: column; 
   justify-content: flex-end; 
