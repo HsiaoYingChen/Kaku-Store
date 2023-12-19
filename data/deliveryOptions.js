@@ -44,10 +44,8 @@ export function calculateDeliveryDate(deliveryOption) {
       // 簡寫remainingDays = remainingDays - 1;
     }
   }
-
-  const dateString = deliveryDate.format(
-    'YYYY/MM/DD  (ddd)'
-  );
+  const dateString = deliveryDate.locale('zh-tw').format('YYYY/MM/DD (dd)');
 
   return dateString;
+  return dayjs(someDate).locale('zh-tw')
 }

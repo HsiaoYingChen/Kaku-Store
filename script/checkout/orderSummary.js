@@ -3,7 +3,10 @@ import {products, getProduct} from '../../data/shareData.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions, getDeliveryOption, calculateDeliveryDate} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummary.js';
+import 'https://unpkg.com/dayjs@1.11.10/esm/locale/zh-tw';
 
+
+dayjs.locale('zh-tw');
 
 export function renderOrderSummary(){
   let cartSummaryHTML = ''; 
@@ -60,6 +63,7 @@ export function renderOrderSummary(){
           <div class="delivery-options">
             <div class="delivery-options-title">
             請選擇運費:
+            <br>7天後不含(周末)出貨免運
             </div>
             ${deliveryOptionsHTML(matchingProduct, cartItem)}
           </div>
@@ -133,7 +137,7 @@ export function renderOrderSummary(){
           `.js-cart-item-container-${productId}`
         );
         
-        const quantityInput = document.querySelector(
+        const quantityInput = container.querySelector(
           `.js-input-quantity`
         );
 
@@ -153,12 +157,11 @@ export function renderOrderSummary(){
         `.js-cart-item-container-${productId}`
       );
       
-      const quantityInput = document.querySelector(
+      const quantityInput = container.querySelector(
         `.js-input-quantity`
       );
 
-      // const newQuantity = Number(quantityInput.value) - 1;
-      const newQuantity = Math.max(Number(quantityInput.value) - 1, 0)
+      const newQuantity = Math.max(Number(quantityInput.value) - 1, 1);
       updateQuantity(productId, newQuantity);
       
       renderOrderSummary();

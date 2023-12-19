@@ -1,6 +1,12 @@
 .banner-box h1{
   padding: 50px 50px;
 }
+@media (max-width: 768px) {
+  .banner-box h1 {
+  font-size: 25px;
+
+  }
+ }
 
 .main{
   display: flex;

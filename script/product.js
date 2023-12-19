@@ -50,7 +50,7 @@ products.forEach((product)=>{
 							<button class="btn-add-to-cart 
 									btn-primary js-add-to-cart"
 									data-product-id="${product.id}">
-									加入購物車
+									<span>加入購物車<i class="fa-solid fa-cart-shopping"></i></span>
 							</button>
 					</div>		  
 </div>      
